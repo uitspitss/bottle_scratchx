@@ -1,6 +1,6 @@
 #!python
 #-*-coding:utf-8-*-
-#Time-stamp: <Wed Jan 13 20:57:15 JST 2016>
+#Time-stamp: <Tue Jan 19 05:34:18 東京 (標準時) 2016>
 from __future__ import print_function
 from __future__ import unicode_literals
 from __future__ import division
@@ -40,24 +40,26 @@ def server_static(filepath):
 
 @route("/blink")
 def blink():
-    theDevice = ArduinoUsbDevice(idVendor=0x16c0, idProduct=0x05df)
+    # theDevice = ArduinoUsbDevice(idVendor=0x16c0, idProduct=0x05df)
 
-    red = request.query.get('red')
-    green = request.query.get('green')
-    blue = request.query.get('blue')
+    # red = request.query.get('red')
+    # green = request.query.get('green')
+    # blue = request.query.get('blue')
 
-    print("red:{}, green:{}, blue:{}".format(red, green, blue))
+    # print("red:{}, green:{}, blue:{}".format(red, green, blue))
 
-    red = int(mapping(red))
-    green = int(mapping(green))
-    blue = int(mapping(blue))
+    # red = int(mapping(red))
+    # green = int(mapping(green))
+    # blue = int(mapping(blue))
 
-    theDevice.write(ord("s"))
-    theDevice.write(red)
-    theDevice.write(green)
-    theDevice.write(blue)
+    # theDevice.write(ord("s"))
+    # theDevice.write(red)
+    # theDevice.write(green)
+    # theDevice.write(blue)
 
-    print("mred:{}, mgreen:{}, mblue:{}".format(red, green, blue))
+    # print("mred:{}, mgreen:{}, mblue:{}".format(red, green, blue))
+
+    pass
 
 def mapping(arg):
     arg = float(arg)

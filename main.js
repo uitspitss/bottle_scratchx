@@ -24,16 +24,25 @@
   };
 
   ext.blink = function(red, green, blue){
-    $.ajax({
-      type: "GET",
-      url: "http://localhost:5000/blink",
-      dataType: "script",
-      data: {
-        red: red,
-        green: green,
-        blue: blue
-      }
-    });
+    device.open();
+    var arr = new Uint8Array(6);
+    arr[1] = 115;
+    arr[2] = 0xff;
+    arr[3] = 0xff;
+    arr[4] = 0xff;
+    console.log(arr);
+    Digi.write(arr.buffer);
+
+    // $.ajax({
+    //   type: "GET",
+    //   url: "http://localhost:5000/blink",
+    //   dataType: "script",
+    //   data: {
+    //     red: red,
+    //     green: green,
+    //     blue: blue
+    //   }
+    // });
   };
 
   var descriptor = {
