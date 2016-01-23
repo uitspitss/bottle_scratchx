@@ -23,15 +23,15 @@
     return {status: 2, msg: 'digiUSB connectd'};
   };
 
-  ext.blink = function(red, green, blue){
+  ext.blink = function(r, g, b){
     $.ajax({
       type: "GET",
-      url: "http://localhost:5000/blink",
+      url: "http://localhost:9000/blink",
       dataType: "script",
       data: {
-        red: red,
-        green: green,
-        blue: blue
+        red: r,
+        green: g,
+        blue: b
       }
     });
   };
@@ -42,7 +42,7 @@
        "100", "100", "100"]
     ],
     menus: {},
-    url: 'http://localhost:5000'
+    url: 'http://localhost:9000'
   };
 
   var hid_info = {type: 'hid', vendor: 0x16c0, product: 0x05df};

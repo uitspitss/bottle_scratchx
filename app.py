@@ -1,13 +1,11 @@
 #!python
 #-*-coding:utf-8-*-
-#Time-stamp: <Wed Jan 13 20:57:15 JST 2016>
 from __future__ import print_function
 from __future__ import unicode_literals
 from __future__ import division
 
 
 # for bottle
-import os
 from bottle import route, run, template, request, response, static_file
 
 # for scratchx
@@ -15,7 +13,6 @@ import usb
 import sys
 sys.path.append("..")
 from arduino.usbdevice import ArduinoUsbDevice
-import random
 
 theDevice = None
 
@@ -29,7 +26,7 @@ def top():
   <title></title>
 </head>
 <body>
-  <a href="http://scratchx.org/?url=http://localhost:5000/main.js">ScratchX</a>
+  <a href="http://scratchx.org/?url=http://localhost:9000/main.js">ScratchX</a>
 </body>
 </html>
 '''
@@ -69,5 +66,5 @@ def mapping(arg):
         return arg * 0.01 * 255
 
 if __name__ == '__main__':
-    run(host="localhost", port=5000, debug=True, reloader=True)
+    run(host="localhost", port=9000, debug=True, reloader=True)
 
