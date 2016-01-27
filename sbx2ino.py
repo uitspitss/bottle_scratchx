@@ -1,6 +1,6 @@
 #!python
 #-*-coding:utf-8-*-
-#Time-stamp: <Wed Jan 13 21:43:07 JST 2016>
+#Time-stamp: <Wed Jan 13 02:51:46 東京 (標準時) 2016>
 from __future__ import print_function
 from __future__ import unicode_literals
 from __future__ import division
@@ -19,7 +19,7 @@ control_blocks = {"wait:elapsed:from:": "DigiUSB.delay", "DigiUSB.blink": ""}
 brace_blocks = {"doForever": "for", "doIf": "if"}
 
 def main():
-    with ZipFile("bottle.sbx", "r") as zf:
+    with ZipFile("0113.sbx", "r") as zf:
         with zf.open("project.json", "r") as pf:
             data = json.loads(pf.read().decode('utf-8'))
 
